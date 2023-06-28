@@ -50,11 +50,12 @@ If you build this project from a git working directory, the main [CMakeLists.txt
 
 Right now our drivers officially support the following architectures:
 
-|             | Kernel module                                                                                | eBPF probe | Modern eBPF probe |
-| ----------- |----------------------------------------------------------------------------------------------| ---------- | ----------------- |
-| **x86_64**  | >= 2.6                                                                                       | >= 4.14    | >= 5.8            |
-| **aarch64** | >= [3.16](https://github.com/torvalds/linux/commit/055b1212d141f1f398fca548f8147787c0b6253f) | >= 4.17    | >= 5.8            |
+|             | Kernel module                                                                                | eBPF probe                                                     | Modern eBPF probe |
+|-------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------|-------------------|
+| **x86_64**  | >= 2.6                                                                                       | >= 4.14                                                        | >= 5.8            |
+| **aarch64** | >= [3.16](https://github.com/torvalds/linux/commit/055b1212d141f1f398fca548f8147787c0b6253f) | >= 4.17                                                        | >= 5.8            |
 | **s390x**   | >= 2.6                                                                                       | >= [5.5](https://github.com/torvalds/linux/commit/6ae08ae3dea) | >= 5.8            |
+| **riscv64** | >= [5.0](https://github.com/torvalds/linux/commit/5aeb1b36cedd3a1dfdbfe368629fed52dee34103)  | N/A                                                            | N/A               |
 
 **For a list of supported syscalls through specific events, please refer to [_report_](./driver/report.md).**
 

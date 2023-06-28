@@ -52,7 +52,7 @@ struct ppm_ring_buffer_context {
 	u32 nevents;
 #ifndef UDIG
 	atomic_t preempt_count;
-#endif	
+#endif
 	char *str_storage;	/* String storage. Size is one page. */
 };
 
@@ -87,6 +87,8 @@ long ppm_strncpy_from_user(char *to, const char __user *from, unsigned long n);
 #elif defined CONFIG_S390
   #define SYSCALL_TABLE_ID0 0
 #elif defined CONFIG_ARM64
+  #define SYSCALL_TABLE_ID0 0
+#elif defined CONFIG_RISCV
   #define SYSCALL_TABLE_ID0 0
 #endif
 

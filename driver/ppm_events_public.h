@@ -611,7 +611,7 @@ or GPL2.txt for full copies of the license.
 #define PPM_EXE_WRITABLE		(1 << 0)
 #define PPM_EXE_UPPER_LAYER 	(1 << 1)
 #define PPM_EXE_FROM_MEMFD  	(1 << 2)
-  
+
 /*
  * Execveat flags
  */
@@ -1826,7 +1826,8 @@ enum extra_event_prog_code
 	PPM_SC_X(IDLE, 408) \
 	PPM_SC_X(S390_RUNTIME_INSTR, 409) \
 	PPM_SC_X(SIGRETURN, 410) \
-	PPM_SC_X(S390_GUARDED_STORAGE, 411)
+	PPM_SC_X(S390_GUARDED_STORAGE, 411) \
+    PPM_SC_X(RISCV_FLUSH_ICACHE, 412)
 
 typedef enum {
 #define PPM_SC_X(name, value) PPM_SC_##name = (value),

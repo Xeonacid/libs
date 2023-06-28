@@ -26,4 +26,5 @@ build*
 CMakeUserPresets.json
 cscope.out
 tags
-
+.idea
+cmake-build-debug

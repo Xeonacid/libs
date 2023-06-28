@@ -44,7 +44,7 @@ const struct syscall_evt_pair g_syscall_table[SYSCALL_TABLE_SIZE] = {
 #endif
 #ifdef __NR_pipe2
 	[__NR_pipe2 - SYSCALL_TABLE_ID0] =                      {UF_USED | UF_NEVER_DROP, PPME_SYSCALL_PIPE2_E, PPME_SYSCALL_PIPE2_X, PPM_SC_PIPE2},
-#endif	
+#endif
 #ifdef __NR_eventfd
 	[__NR_eventfd - SYSCALL_TABLE_ID0] =                    {UF_USED | UF_NEVER_DROP, PPME_SYSCALL_EVENTFD_E, PPME_SYSCALL_EVENTFD_X, PPM_SC_EVENTFD},
 #endif
@@ -907,5 +907,8 @@ const struct syscall_evt_pair g_syscall_table[SYSCALL_TABLE_SIZE] = {
 #endif
 #ifdef __NR_sigsuspend
 	[__NR_sigsuspend - SYSCALL_TABLE_ID0] = {.ppm_sc = PPM_SC_SIGSUSPEND},
+#endif
+#ifdef __NR_riscv_flush_icache
+	[__NR_riscv_flush_icache - SYSCALL_TABLE_ID0] = {.ppm_sc = PPM_SC_RISCV_FLUSH_ICACHE},
 #endif
 };
