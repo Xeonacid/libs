@@ -33,6 +33,7 @@ string(REGEX MATCH "[0-9]+.[0-9]+" LINUX_KERNEL_VERSION ${UNAME_RESULT})
 set(modern_bpf_min_kver_map_x86_64 5.8)
 set(modern_bpf_min_kver_map_aarch64 5.8)
 set(modern_bpf_min_kver_map_s390x 5.8)
+set(modern_bpf_min_kver_map_riscv64 5.8)
 if (LINUX_KERNEL_VERSION VERSION_LESS ${modern_bpf_min_kver_map_${CMAKE_HOST_SYSTEM_PROCESSOR}})
   message(WARNING "${MODERN_BPF_LOG_PREFIX} To run this driver you need a Linux kernel version >= ${modern_bpf_min_kver_map_${CMAKE_HOST_SYSTEM_PROCESSOR}} but actual kernel version is: ${UNAME_RESULT}")
 endif()
@@ -137,7 +138,7 @@ if(${BPFTOOL_version_result} EQUAL 0)
       string(COMPARE LESS ${BPFTOOL_VERSION_MINOR} 13 BPFTOOL_VERSION_MINOR_LT13)
       if(${BPFTOOL_VERSION_MINOR_LT13})
         message(WARNING "${MODERN_BPF_LOG_PREFIX} bpftool '${BPFTOOL_VERSION}' is too old for compiling the modern BPF probe, you need at least '5.13.0' version")
-      endif()  
+      endif()
     endif()
 
     message(STATUS "${MODERN_BPF_LOG_PREFIX} Found bpftool version: ${BPFTOOL_VERSION}")
@@ -177,6 +178,7 @@ execute_process(COMMAND uname -m
   COMMAND sed "s/ppc64le/powerpc/"
   COMMAND sed "s/mips.*/mips/"
   COMMAND sed "s/s390x/s390/"
+  COMMAND sed "s/riscv64/riscv/"
   OUTPUT_VARIABLE ARCH_output
   ERROR_VARIABLE ARCH_error
   RESULT_VARIABLE ARCH_result

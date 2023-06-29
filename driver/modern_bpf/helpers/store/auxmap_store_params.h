@@ -414,7 +414,7 @@ static __always_inline void auxmap__store_execve_args(struct auxiliary_map *auxm
  * path component that we can retrieve (MAX_PATH_POINTERS).
  *
  * This version of `auxmap__store_path_from_fd` works smooth on all
- * supported architectures: `s390x`, `ARM64`, `x86_64`.
+ * supported architectures: `s390x`, `ARM64`, `x86_64`, `riscv64`.
  * The drawback is that due to its complexity we can catch at most
  * `MAX_PATH_POINTERS==8`.
  *

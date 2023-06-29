@@ -32,6 +32,11 @@
  */
 #define _TIF_31BIT (1 << 16)
 
+#elif defined(__TARGET_ARCH_riscv)
+
+/* Taken from arch/riscv/include/asm/thread_info.h */
+#define _TIF_32BIT (1 << 11)
+
 #endif
 
 /*=============================== ARCH SPECIFIC ===========================*/
@@ -148,7 +153,7 @@
 #define O_DSYNC 00010000 /* used to be O_SYNC, see below */
 #define FASYNC 00020000	 /* fcntl, for BSD compatibility */
 
-#if defined(__TARGET_ARCH_x86) || defined(__TARGET_ARCH_s390)
+#if defined(__TARGET_ARCH_x86) || defined(__TARGET_ARCH_s390) || defined(__TARGET_ARCH_riscv)
 
 #define O_DIRECT 00040000 /* direct disk access hint */
 #define O_LARGEFILE 00100000
@@ -1384,10 +1389,10 @@
 
 /*=============================== SPLICE SYSCALL =============================*/
 
-#define SPLICE_F_MOVE	   (0x01)	
-#define SPLICE_F_NONBLOCK  (0x02) 
-#define SPLICE_F_MORE	   (0x04)	
-#define SPLICE_F_GIFT	   (0x08)	
+#define SPLICE_F_MOVE	   (0x01)
+#define SPLICE_F_NONBLOCK  (0x02)
+#define SPLICE_F_MORE	   (0x04)
+#define SPLICE_F_GIFT	   (0x08)
 
 #define SPLICE_F_ALL (SPLICE_F_MOVE|SPLICE_F_NONBLOCK|SPLICE_F_MORE|SPLICE_F_GIFT)
 

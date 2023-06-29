@@ -192,7 +192,7 @@ int BPF_PROG(t1_clone_x,
 	/* Parameter 16: flags (type: PT_FLAGS32) */
 	/* Different architectures have different signatures of the clone syscall:
 	 * https://github.com/torvalds/linux/blob/3cc40a443a04d52b0c95255dce264068b01e9bfe/kernel/fork.c#L2773-L2795
-	 * - `aarch64` uses `CONFIG_CLONE_BACKWARDS`
+	 * - `aarch64` and `riscv64` uses `CONFIG_CLONE_BACKWARDS`
 	 * - `s390x` uses `CONFIG_CLONE_BACKWARDS2`
 	 * - `x86_64` uses the actual version without `BACKWARDS` configs.
 	 */

@@ -26,6 +26,9 @@ static __always_inline bool syscalls_dispatcher__check_32bit_syscalls()
 #elif defined(__TARGET_ARCH_s390)
 	READ_TASK_FIELD_INTO(&status, task, thread_info.flags);
 	return status & _TIF_31BIT;
+#elif defined(__TARGET_ARCH_riscv)
+    READ_TASK_FIELD_INTO(&status, task, thread_info.flags);
+    return status & _TIF_32BIT;
 #else
 	return false;
 #endif
