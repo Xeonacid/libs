@@ -1867,7 +1867,43 @@ enum extra_event_prog_code
 	PPM_SC_X(S390_RUNTIME_INSTR, 409) \
 	PPM_SC_X(SIGRETURN, 410) \
 	PPM_SC_X(S390_GUARDED_STORAGE, 411) \
-	PPM_SC_X(CACHESTAT, 412)
+	PPM_SC_X(CACHESTAT, 412)               \
+	PPM_SC_X(MULTIPLEXER, 413)             \
+	PPM_SC_X(SETXATTRAT, 414)              \
+	PPM_SC_X(VM86, 415)                    \
+	PPM_SC_X(LISTXATTRAT, 416)             \
+	PPM_SC_X(RISCV_FLUSH_ICACHE, 417)      \
+	PPM_SC_X(LSM_LIST_MODULES, 418)        \
+	PPM_SC_X(MSEAL, 419)                   \
+	PPM_SC_X(FCHMODAT2, 420)               \
+	PPM_SC_X(OLDOLDUNAME, 421)             \
+	PPM_SC_X(PCICONFIG_IOBASE, 422)        \
+	PPM_SC_X(STATMOUNT, 423)               \
+	PPM_SC_X(REMOVEXATTRAT, 424)           \
+	PPM_SC_X(URETPROBE, 425)               \
+	PPM_SC_X(GETXATTRAT, 426)              \
+	PPM_SC_X(LSM_GET_SELF_ATTR, 427)       \
+	PPM_SC_X(SWITCH_ENDIAN, 428)           \
+	PPM_SC_X(PCICONFIG_READ, 429)          \
+	PPM_SC_X(RISCV_HWPROBE, 430)           \
+	PPM_SC_X(OPEN_TREE_ATTR, 431)          \
+	PPM_SC_X(LSM_SET_SELF_ATTR, 432)       \
+	PPM_SC_X(OLDSTAT, 433)                 \
+	PPM_SC_X(SPU_RUN, 434)                 \
+	PPM_SC_X(SYNC_FILE_RANGE2, 435)        \
+	PPM_SC_X(SUBPAGE_PROT, 436)            \
+	PPM_SC_X(FUTEX_WAKE, 437)              \
+	PPM_SC_X(SPU_CREATE, 438)              \
+	PPM_SC_X(PCICONFIG_WRITE, 439)         \
+	PPM_SC_X(RTAS, 440)                    \
+	PPM_SC_X(SYS_DEBUG_SETCONTEXT, 441)    \
+	PPM_SC_X(LISTMOUNT, 442)               \
+	PPM_SC_X(OLDLSTAT, 443)                \
+	PPM_SC_X(OLDFSTAT, 444)                \
+	PPM_SC_X(FUTEX_WAIT, 445)              \
+	PPM_SC_X(MAP_SHADOW_STACK, 446)        \
+	PPM_SC_X(SWAPCONTEXT, 447)             \
+	PPM_SC_X(FUTEX_REQUEUE, 448)
 
 typedef enum {
 #define PPM_SC_X(name, value) PPM_SC_##name = (value),
